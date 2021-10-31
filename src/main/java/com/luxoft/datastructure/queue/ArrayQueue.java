@@ -22,13 +22,21 @@ public class ArrayQueue implements Queue {
 
     @Override
     public Object dequeue() {
-        Object result = arr[0];
-        Object[] newArr = new Object[arr.length - 1];
-        for (int i = 1; i < arr.length; i++) {
-            newArr[i - 1] = arr[i];
+        if (isEmpty()) {
+            throw new IllegalStateException("Empty!");
         }
-        size--;
-        arr = newArr;
+        Object result = arr[0];
+//        Object[] newArr = new Object[arr.length - 1];
+//        for (int i = 1; i < arr.length; i++) {
+//            newArr[i - 1] = arr[i];
+//        }
+//        size--;
+//        arr = newArr;
+        for (int i = 0; i < size-1 ; i++) {
+            arr [i]= arr [i+1];
+        }
+        arr [size] = null;
+        size --;
         return result;
     }
 
@@ -60,6 +68,9 @@ public class ArrayQueue implements Queue {
 
     @Override
     public void clear() {
+        for (int i=0; i < size; i++) {
+            arr[i] = null;
+        }
         size = 0;
     }
 }

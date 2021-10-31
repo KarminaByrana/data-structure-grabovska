@@ -69,13 +69,5 @@ assertTrue(arrayQueue.isEmpty());
         arrayQueue.clear();
         assertTrue(arrayQueue.isEmpty());
     }
-//    ArrayStack arrayStack = new ArrayStack();
-//        arrayStack.push("A");
-//        arrayStack.push("B");
-//
-//    assertEquals(2, arrayStack.size());
-//    assertEquals("B", arrayStack.pop());
-//    assertEquals("A", arrayStack.pop());
-//    assertEquals(0, arrayStack.size());
-//    assertTrue(arrayStack.isEmpty());
+
 }
